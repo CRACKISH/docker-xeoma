@@ -19,7 +19,7 @@ jobs:
     
     
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag crackish/docker-xeoma:latest
+    - run: docker build . --file Dockerfile --tag crackish/docker-xeoma:latest
       
     - name: Push Image to Docker
-      run: docker push crackish/docker-xeoma:latest
+    - run: docker push crackish/docker-xeoma:latest
