@@ -13,15 +13,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout
+      uses: actions/checkout@v3
+    
     - name: Login to Docker Hub
-    - run: docker login -u crackish
-    
-    
-    - uses: actions/checkout@v3
+      run: docker login -u crackish
+        
     - name: Build the Docker image
-    - run: docker build . --file Dockerfile --tag crackish/docker-xeoma:latest
+      run: docker build . --file Dockerfile --tag crackish/docker-xeoma:latest
       
-    - uses: actions/checkout@v3
     - name: Push Image to Docker
-    - run: docker push crackish/docker-xeoma:latest
+      run: docker push crackish/docker-xeoma:latest
