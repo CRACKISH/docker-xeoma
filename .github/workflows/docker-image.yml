@@ -18,8 +18,10 @@ jobs:
     - run: docker login -u crackish
     
     
+    - uses: actions/checkout@v3
     - name: Build the Docker image
     - run: docker build . --file Dockerfile --tag crackish/docker-xeoma:latest
       
+    - uses: actions/checkout@v3
     - name: Push Image to Docker
     - run: docker push crackish/docker-xeoma:latest
