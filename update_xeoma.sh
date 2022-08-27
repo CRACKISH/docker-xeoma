@@ -24,6 +24,11 @@ function get_installed_version {
 
 echo "$(ts) Attempting to auto-update Xeoma"
 
+if [[ "$AUTOUPDATE" == "false" ]];then
+  echo "$(ts) Auto update disabled."
+  exit 1
+fi
+
 echo "vvvvvvvvvvvvvvvvvvv"
 last_installed_version=$(get_installed_version)
 /etc/my_init.d/40_install_xeoma.py
